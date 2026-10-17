@@ -1,0 +1,1 @@
+# shopify-seo-booster-kit
