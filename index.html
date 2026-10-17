@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Shopify Product SEO Generator - Free Tool by Fari</title>
+<style>
+body{font-family:Inter,sans-serif;background:#f6f6f7;max-width:700px;margin:auto;padding:20px}
+.card{background:white;padding:25px;border-radius:12px;box-shadow:0 4px 20px rgba(0,0,0,.05)}
+input,textarea,select{width:100%;padding:12px;margin:8px 0;border:1px solid #ddd;border-radius:8px}
+button{background:#008060;color:white;padding:14px;border:none;border-radius:8px;width:100%;font-weight:bold;cursor:pointer;margin-top:10px}
+.result{background:#f1f1f1;padding:15px;border-radius:8px;margin-top:15px;white-space:pre-wrap}
+h2{color:#202223}
+</style>
+</head>
+<body>
+<div class="card">
+<h2>🛍️ Shopify Product SEO Generator</h2>
+<p>Dropshippers ke liye - Product ko Google pe rank karo</p>
+
+<input id="pname" placeholder="Product Name - e.g. Black Abaya for Girls">
+<input id="keyword" placeholder="Main Keyword - e.g. abaya in pakistan">
+<select id="tone">
+<option>Pakistan / Urdu Audience</option>
+<option>USA / International</option>
+</select>
+<button onclick="generate()">Generate SEO Title + Description</button>
+
+<div id="output" class="result" style="display:none"></div>
+<button id="copyBtn" style="display:none;background:black" onclick="copy()">Copy for Shopify</button>
+</div>
+
+<script>
+function generate(){
+let name=document.getElementById('pname').value;
+let key=document.getElementById('keyword').value;
+let title = `${name} | ${key} | Free Delivery in Pakistan`;
+let desc = `Buy ${name} online in Pakistan. Best quality ${key}. Cash on Delivery available all over Pakistan. Limited stock! Perfect for daily use.\n\nFeatures:\n- Premium Quality\n- Free Delivery\n- Cash on Delivery\n\nShop now at best price.`;
+let tags = `${key}, ${name}, buy ${key} pakistan, online shopping`;
+
+let out = `✅ SEO TITLE (For Google):\n${title}\n\n✅ SEO DESCRIPTION (For Shopify):\n${desc}\n\n✅ TAGS:\n${tags}\n\n✅ URL HANDLE:\n${name.toLowerCase().replace(/ /g,'-')}`;
+
+document.getElementById('output').style.display='block';
+document.getElementById('output').innerText=out;
+document.getElementById('copyBtn').style.display='block';
+}
+function copy(){navigator.clipboard.writeText(document.getElementById('output').innerText);alert('Copied! Paste in Shopify')}
+</script>
+</body>
+</html>
